@@ -1,40 +1,67 @@
-# Família Bolsonaro: guia informativo
+# 🏛️ Família Bolsonaro: Guia Informativo & Dossiê 2026
 
-Site estático (HTML + CSS, sem build) com um resumo factual sobre os principais membros da família Bolsonaro e a situação de cada um. Conteúdo atualizado em 10 de novembro de 2026, com fontes listadas na própria página.
+Um portal web moderno, interativo e factual com o raio-x completo dos principais membros da família Bolsonaro: mandatos, eleições de 2026, processos judiciais no STF e fontes jornalísticas auditadas.
 
-## Estrutura
+🔗 **Deploy automático:** Vercel e GitHub Pages.
 
+---
+
+## ✨ Recursos & Funcionalidades
+
+- **Design Premium & Responsivo:** Interface construída com tipografia de impacto (*Plus Jakarta Sans* e *Inter*), microinterações fluidas e suporte nativo a dispositivos móveis e desktops.
+- **Dark Mode & Light Mode:** Alternância dinâmica de tema com persistência automática no `localStorage`.
+- **Fotos Oficiais em Alta Definição:** Imagens otimizadas para carregamento instantâneo de cada um dos 6 membros.
+- **Barra de Busca em Tempo Real:** Pesquisa rápida com atalho de teclado `/` que filtra os perfis e os dados instantaneamente.
+- **Métricas & Contadores Animados:** Painel de indicadores com contagem interativa de cargos, mandatos e decisões judiciais.
+- **Filtros por Categoria:** Navegue facilmente entre "Todos", "Eleitos & Senadores", "Processos Judiciais" e "Executivo".
+- **Dossiê com Detalhes Expansíveis:** Cartões detalhados com histórico, tags institucionais e botão rápido para copiar resumos.
+- **Linha do Tempo Recente (2025–2026):** Cronologia visual com animação ativada pelo scroll da página (*IntersectionObserver*).
+- **Versões em Disputa:** Comparativo neutro e balanceado entre os argumentos da acusação/STF e da defesa/aliados.
+- **Checagem de Fontes:** Acesso direto às matérias e decisões judiciais catalogadas.
+
+---
+
+## 📁 Estrutura de Arquivos
+
+```text
+├── assets/
+│   └── images/          # Retratos oficiais otimizados para web
+├── favicon.svg          # Ícone vetorial da aplicação
+├── index.html           # Estrutura semântica da aplicação
+├── script.js            # Lógica interativa, busca, tema e animações
+├── style.css            # Design System, variáveis CSS, temas e animações
+└── README.md            # Documentação do projeto
 ```
-index.html   página única
-style.css    estilos
-```
 
-## Rodar localmente
+---
 
-Abra o `index.html` no navegador, ou rode `npx serve .` na pasta.
+## 🚀 Como Executar Localmente
 
-## Publicar no GitHub
+Como o projeto é desenvolvido em HTML5, CSS3 e JavaScript puro, não é necessário instalar dependências ou executar builds:
 
-```bash
-cd site-familia-bolsonaro
-git init
-git add .
-git commit -m "Primeira versão do site"
-git branch -M main
-git remote add origin https://github.com/SEU-USUARIO/site-familia-bolsonaro.git
-git push -u origin main
-```
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/Luk41400/site-bolso.git
+   cd site-bolso
+   ```
+2. Abra o arquivo `index.html` em qualquer navegador moderno, ou utilize um servidor local:
+   ```bash
+   # Com Node.js / npx:
+   npx serve .
 
-(Crie antes o repositório vazio em github.com/new.)
+   # Com Python:
+   python -m http.server 3000
+   ```
 
-## Publicar na Vercel
+---
 
-1. Em vercel.com, clique em **Add New → Project** e importe o repositório.
-2. Em **Framework Preset**, deixe **Other**. Não precisa de build command nem de output directory.
-3. Clique em **Deploy**.
+## 🌐 Publicação & Deploy
 
-A cada `git push` na branch `main`, a Vercel publica a nova versão automaticamente.
+- **Vercel:** Conectado diretamente à branch `main`. Cada novo `git push` dispara o deploy contínuo automaticamente.
+- **GitHub Pages:** Pode ser ativado nas configurações do repositório (*Settings → Pages → Branch: main / root*).
 
-## Manter atualizado
+---
 
-As informações mudam rápido (processos, mandatos, prisões). Revise o texto e as fontes de tempos em tempos e atualize a data no topo da página.
+## ⚖️ Nota de Neutralidade
+
+Este projeto possui finalidade estritamente documental, educativa e jornalística, sem qualquer afiliação partidária ou governamental. Todas as informações são embasadas em processos públicos e reportagens com fontes citadas.

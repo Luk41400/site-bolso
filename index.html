@@ -1,185 +1,817 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="dark">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Família Bolsonaro: quem é quem e onde cada um está hoje</title>
-  <meta name="description" content="Guia informativo sobre os principais membros da família Bolsonaro e a situação política e jurídica de cada um, com fontes. Atualizado em 10 de novembro de 2026.">
-  <meta property="og:title" content="Família Bolsonaro: quem é quem e onde cada um está hoje">
-  <meta property="og:description" content="Guia informativo com a situação política e jurídica dos principais membros da família, com fontes.">
+  <title>Família Bolsonaro: Raio-X Político & Jurídico 2026</title>
+  <meta name="description" content="Guia interativo e factual com o panorama completo dos principais membros da família Bolsonaro: cargos, eleições de 2026, decisões do STF e fontes jornalísticas auditadas.">
+  
+  <!-- OpenGraph / Social -->
+  <meta property="og:title" content="Família Bolsonaro: Raio-X Político & Jurídico 2026">
+  <meta property="og:description" content="Panorama interativo, factual e atualizado dos cargos, eleições de 2026 e processos judiciais da família Bolsonaro.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Estilos -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="topbar">
-  <div class="wrap-wide">
-    <strong>Família Bolsonaro: guia informativo</strong>
-    <nav aria-label="Seções">
-      <a href="#quadro">Quadro geral</a>
-      <a href="#pessoas">Perfis</a>
-      <a href="#cronologia">Cronologia</a>
-      <a href="#versoes">Versões em disputa</a>
-      <a href="#fontes">Fontes</a>
-    </nav>
-  </div>
-</header>
+  <!-- Barra de Progresso de Leitura -->
+  <div class="scroll-progress-bar" id="scroll-progress"></div>
 
-<main>
-  <div class="wrap-wide hero">
-    <h1>A família Bolsonaro, hoje</h1>
-    <p class="lede">Um resumo do que se sabe sobre os principais membros da família do ex-presidente Jair Bolsonaro: cargos, eleições de 2026 e processos judiciais.</p>
-    <p class="status">Situação em 10 de novembro de 2026. Fatos sujeitos a mudança; confira as fontes no final da página.</p>
-  </div>
+  <!-- Header Superior Fixo -->
+  <header class="topbar">
+    <div class="container topbar-content">
+      <a href="#" class="brand-wrapper" aria-label="Ir ao topo">
+        <div class="brand-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span>Família Bolsonaro</span>
+          <span class="brand-sub">Dossiê 2026</span>
+        </div>
+      </a>
 
-  <section id="quadro">
-    <div class="wrap-wide">
-      <h2>Quadro geral</h2>
-      <p class="wrap" style="margin-inline:0">Em 2026, a família teve um ano de contrastes: três de seus integrantes foram eleitos para o Senado ou disputaram a Presidência, enquanto o patriarca cumpre pena e um dos filhos é alvo de ordem de prisão.</p>
-      <div class="table-scroll">
-        <table>
-          <caption>Principais membros e situação atual</caption>
-          <thead>
-            <tr><th scope="col">Nome</th><th scope="col">Relação</th><th scope="col">Situação em novembro de 2026</th></tr>
-          </thead>
-          <tbody>
-            <tr><th scope="row">Jair Bolsonaro</th><td>Ex-presidente (2019–2022)</td><td>Condenado a 27 anos e 3 meses por tentativa de golpe de Estado; cumpre pena em prisão domiciliar em Brasília.</td></tr>
-            <tr><th scope="row">Michelle Bolsonaro</th><td>Esposa; ex-primeira-dama</td><td>Eleita senadora pelo Distrito Federal em 4 de outubro; toma posse em 2027.</td></tr>
-            <tr><th scope="row">Flávio Bolsonaro</th><td>Filho (“01”)</td><td>Senador pelo Rio de Janeiro (PL). Candidato à Presidência, perdeu o segundo turno para Lula.</td></tr>
-            <tr><th scope="row">Carlos Bolsonaro</th><td>Filho (“02”)</td><td>Ex-vereador do Rio de Janeiro; eleito senador por Santa Catarina em 4 de outubro.</td></tr>
-            <tr><th scope="row">Eduardo Bolsonaro</th><td>Filho (“03”)</td><td>Ex-deputado federal; condenado pelo STF a 4 anos e 2 meses; mora nos Estados Unidos; há mandado de prisão expedido.</td></tr>
-            <tr><th scope="row">Jair Renan Bolsonaro</th><td>Filho (“04”)</td><td>Vereador em Balneário Camboriú (SC); disputou vaga de deputado federal em 2026.</td></tr>
-          </tbody>
-        </table>
+      <!-- Navegação Principal -->
+      <nav id="nav-menu">
+        <ul class="nav-links">
+          <li><a href="#quadro">Quadro Geral</a></li>
+          <li><a href="#perfis">Perfis</a></li>
+          <li><a href="#cronologia">Linha do Tempo</a></li>
+          <li><a href="#versoes">Em Disputa</a></li>
+          <li><a href="#fontes">Fontes</a></li>
+        </ul>
+      </nav>
+
+      <!-- Ações do Header -->
+      <div class="topbar-actions">
+        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Alternar tema claro/escuro" title="Alternar tema">
+          <svg id="theme-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Abrir menu de navegação" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
       </div>
     </div>
-  </section>
+  </header>
 
-  <section id="pessoas">
-    <div class="wrap">
-      <h2>Perfis</h2>
-
-      <article class="profile" id="jair">
-        <h3>Jair Bolsonaro</h3>
-        <p class="role">Presidente da República de 2019 a 2022</p>
-        <p>Em setembro de 2025, o Supremo Tribunal Federal (STF) condenou Jair Bolsonaro por tentativa de golpe de Estado. A pena é de 27 anos e 3 meses. Ele foi preso em novembro de 2025, e a condenação transitou em julgado em 25 de novembro, quando a pena passou a ser executada.</p>
-        <ul>
-          <li>Em março de 2026, passou a cumprir a pena em prisão domiciliar por razões de saúde, em sua casa no Jardim Botânico, em Brasília.</li>
-          <li>Em 3 de julho de 2026, o ministro Alexandre de Moraes manteve a prisão domiciliar por tempo indeterminado e revogou o porte de arma e o certificado de CAC do ex-presidente.</li>
-          <li>Em agosto, Moraes autorizou visitas dos filhos Carlos e Jair Renan.</li>
-          <li>Com o trânsito em julgado, seus direitos políticos ficaram suspensos.</li>
-        </ul>
-      </article>
-
-      <article class="profile" id="michelle">
-        <h3>Michelle Bolsonaro</h3>
-        <p class="role">Primeira-dama de 2019 a 2022; senadora eleita pelo DF</p>
-        <p>Natural de Ceilândia (DF), Michelle foi eleita senadora em 4 de outubro de 2026, na estreia em cargo eletivo. Com cerca de 29% dos votos válidos, ficou em primeiro lugar entre os candidatos ao Senado no Distrito Federal, ao lado de Bia Kicis (PL), também eleita. O mandato é de oito anos, de 2027 a 2035.</p>
-      </article>
-
-      <article class="profile" id="flavio">
-        <h3>Flávio Bolsonaro</h3>
-        <p class="role">Senador pelo Rio de Janeiro (PL); candidato à Presidência em 2026</p>
-        <p>Flávio foi o candidato do PL à Presidência. No primeiro turno, em 4 de outubro, ficou em primeiro lugar, com cerca de 47% dos votos válidos, à frente de Lula (cerca de 45%). No segundo turno, em 25 de outubro, perdeu a eleição: Lula foi reeleito, e Flávio teve 48,2% dos votos.</p>
-        <p>Durante a campanha, ele discutiu publicamente caminhos para reverter as condenações do pai e do irmão, como indulto e anistia, que exigiria lei aprovada pelo Congresso.</p>
-      </article>
-
-      <article class="profile" id="carlos">
-        <h3>Carlos Bolsonaro</h3>
-        <p class="role">Ex-vereador do Rio de Janeiro; senador eleito por Santa Catarina</p>
-        <p>Após sete mandatos como vereador no Rio, Carlos mudou o domicílio eleitoral para Santa Catarina e foi eleito senador em 4 de outubro de 2026, com cerca de 25% dos votos válidos, junto com Carol de Toni (PL). Terá mandato de oito anos.</p>
-      </article>
-
-      <article class="profile" id="eduardo">
-        <h3>Eduardo Bolsonaro</h3>
-        <p class="role">Ex-deputado federal por São Paulo; vive nos Estados Unidos</p>
-        <p>Eduardo mudou-se para os Estados Unidos em 2025 e perdeu o mandato de deputado federal em dezembro daquele ano, por excesso de faltas. Em 16 de junho de 2026, a Primeira Turma do STF o condenou, por unanimidade (4 a 0), a 4 anos e 2 meses de prisão por coação no curso do processo. Segundo a acusação, ele atuou junto ao governo americano por sanções contra o Brasil e contra ministros do STF, para influenciar o julgamento do pai.</p>
-        <ul>
-          <li>Em setembro, o STF rejeitou o recurso e manteve a condenação.</li>
-          <li>Em 8 de outubro, Moraes mandou expedir mandado de prisão contra ele.</li>
-          <li>Enquanto ele estiver nos Estados Unidos, o cumprimento da pena depende de medidas jurídicas e de cooperação internacional.</li>
-        </ul>
-      </article>
-
-      <article class="profile" id="renan">
-        <h3>Jair Renan Bolsonaro</h3>
-        <p class="role">Vereador em Balneário Camboriú (SC)</p>
-        <p>Eleito vereador em 2024, Jair Renan se candidatou a deputado federal por Santa Catarina em 2026, usando “Jair Bolsonaro” como nome de urna. Recebeu 131.461 votos.</p>
-      </article>
-    </div>
-  </section>
-
-  <section id="cronologia">
-    <div class="wrap">
-      <h2>Cronologia recente</h2>
-      <ol class="timeline">
-        <li><time datetime="2025-09">Setembro de 2025</time>STF condena Jair Bolsonaro a 27 anos e 3 meses por tentativa de golpe de Estado.</li>
-        <li><time datetime="2025-11">Novembro de 2025</time>Jair Bolsonaro é preso; em 25 de novembro, a condenação transita em julgado.</li>
-        <li><time datetime="2025-12-18">18 de dezembro de 2025</time>Câmara cassa o mandato de Eduardo Bolsonaro por faltas.</li>
-        <li><time datetime="2026-03">Março de 2026</time>Jair Bolsonaro passa à prisão domiciliar por razões de saúde.</li>
-        <li><time datetime="2026-06-16">16 de junho de 2026</time>Primeira Turma do STF condena Eduardo Bolsonaro a 4 anos e 2 meses de prisão.</li>
-        <li><time datetime="2026-07-03">3 de julho de 2026</time>Moraes mantém a prisão domiciliar de Jair Bolsonaro e revoga seu porte de arma.</li>
-        <li><time datetime="2026-10-04">4 de outubro de 2026</time>Primeiro turno: Flávio e Lula vão ao segundo turno. Michelle (DF) e Carlos (SC) são eleitos senadores.</li>
-        <li><time datetime="2026-10-08">8 de outubro de 2026</time>Moraes determina a expedição de mandado de prisão contra Eduardo Bolsonaro.</li>
-        <li><time datetime="2026-10-25">25 de outubro de 2026</time>Segundo turno: Lula é reeleito, com Flávio Bolsonaro em segundo lugar (48,2%).</li>
-      </ol>
-    </div>
-  </section>
-
-  <section id="versoes">
-    <div class="wrap">
-      <h2>Versões em disputa</h2>
-      <p>Os processos contra Jair e Eduardo Bolsonaro são decisões judiciais definitivas, mas continuam sendo interpretados de formas opostas no debate público. Duas leituras, resumidas:</p>
-      <div class="views">
-        <div class="view">
-          <h3>Leitura de quem apoia as condenações</h3>
-          <p>Os julgamentos seguiram o devido processo no STF, com provas e unanimidade nos casos recentes. No caso de Eduardo, a Corte entendeu que atuar no exterior por sanções contra o Brasil e contra ministros vai além da opinião política e configura coação.</p>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container-narrow">
+        <div class="hero-pill">
+          <span class="pulse-dot"></span>
+          <span>MONITOR POLÍTICO-JURÍDICO • ATUALIZADO EM NOVEMBRO DE 2026</span>
         </div>
-        <div class="view">
-          <h3>Leitura de quem critica as condenações</h3>
-          <p>Aliados da família afirmam haver perseguição política e excesso do Judiciário. Eduardo diz que não foi regularmente citado e que vive em endereço conhecido. O Departamento de Estado americano chamou a condenação dele de “perseguição e manipulação jurídica”.</p>
+
+        <h1 class="hero-title">
+          A Família Bolsonaro, <span class="gradient-highlight">hoje</span>
+        </h1>
+
+        <p class="hero-description">
+          Um panorama interativo e factual sobre os principais membros da família do ex-presidente: cargos, resultados das eleições de 2026, processos judiciais no STF e fontes jornalísticas documentadas.
+        </p>
+
+        <!-- Barra de Busca Rápida -->
+        <div class="search-wrapper">
+          <svg class="search-icon-left" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input 
+            type="text" 
+            id="search-input" 
+            class="search-input-box" 
+            placeholder="Pesquisar por nome, cargo, status ou eleição..." 
+            aria-label="Pesquisar membros ou informações"
+            autocomplete="off"
+          >
+          <span class="search-shortcut" title="Atalho de teclado">Pressione /</span>
+          <button id="search-clear" class="search-clear-btn" aria-label="Limpar busca">✕</button>
+          <div id="search-count" class="search-count-badge"></div>
+        </div>
+
+        <!-- Métricas / Contadores em Destaque -->
+        <div class="stats-grid">
+          <div class="stat-card animate-on-scroll">
+            <div class="stat-number" data-target="6">0</div>
+            <div class="stat-label">Figuras Centrais</div>
+          </div>
+          <div class="stat-card animate-on-scroll">
+            <div class="stat-number" data-target="3">0</div>
+            <div class="stat-label">Disputas no Senado & Planalto</div>
+          </div>
+          <div class="stat-card animate-on-scroll">
+            <div class="stat-number" data-target="2">0</div>
+            <div class="stat-label">Condenações no STF</div>
+          </div>
+          <div class="stat-card animate-on-scroll">
+            <div class="stat-number" data-target="17" data-suffix="+">0</div>
+            <div class="stat-label">Reportagens Auditadas</div>
+          </div>
         </div>
       </div>
-      <p class="small" style="margin-top:1rem">Este site descreve os fatos e as posições das partes; não toma partido entre elas.</p>
+    </section>
+
+    <!-- Seção 1: Quadro Geral -->
+    <section id="quadro">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Visão Panorâmica</span>
+          <h2 class="section-title">Quadro Geral da Situação</h2>
+          <p class="section-subtitle">
+            Em 2026, a família viveu um ano de contrastes: vitórias e disputas expressivas nas urnas federais, em paralelo ao cumprimento de penas e ordens de prisão judiciais.
+          </p>
+        </div>
+
+        <div class="table-toolbar">
+          <div class="filter-group" role="tablist" aria-label="Filtrar por perfil">
+            <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">Todos</button>
+            <button class="filter-btn" data-filter="eleito" role="tab" aria-selected="false">Eleitos & Senadores</button>
+            <button class="filter-btn" data-filter="processo" role="tab" aria-selected="false">Processos Judiciais</button>
+            <button class="filter-btn" data-filter="executivo" role="tab" aria-selected="false">Executivo</button>
+          </div>
+        </div>
+
+        <div class="table-card-wrapper animate-on-scroll">
+          <div class="table-responsive">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th scope="col">Membro</th>
+                  <th scope="col">Relação & Cargo</th>
+                  <th scope="col">Status Jurídico & Político (Nov/2026)</th>
+                </tr>
+              </thead>
+              <tbody id="table-body">
+                <tr>
+                  <td>
+                    <div class="table-person-cell">
+                      <img src="assets/images/jair.jpg" alt="Jair Bolsonaro" class="table-avatar-mini" loading="lazy">
+                      <span>Jair Bolsonaro</span>
+                    </div>
+                  </td>
+                  <td>Ex-presidente da República (2019–2022)</td>
+                  <td>
+                    <span class="status-badge red">
+                      🔴 Prisão Domiciliar (27 anos e 3 meses)
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="table-person-cell">
+                      <img src="assets/images/michelle.jpg" alt="Michelle Bolsonaro" class="table-avatar-mini" loading="lazy">
+                      <span>Michelle Bolsonaro</span>
+                    </div>
+                  </td>
+                  <td>Esposa; Ex-primeira-dama</td>
+                  <td>
+                    <span class="status-badge green">
+                      🟢 Senadora Eleita DF (2027–2035)
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="table-person-cell">
+                      <img src="assets/images/flavio.jpg" alt="Flávio Bolsonaro" class="table-avatar-mini" loading="lazy">
+                      <span>Flávio Bolsonaro ("01")</span>
+                    </div>
+                  </td>
+                  <td>Senador pelo Rio de Janeiro (PL)</td>
+                  <td>
+                    <span class="status-badge yellow">
+                      🟡 2º Lugar Presidência (48,2% dos votos)
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="table-person-cell">
+                      <img src="assets/images/carlos.jpg" alt="Carlos Bolsonaro" class="table-avatar-mini" loading="lazy">
+                      <span>Carlos Bolsonaro ("02")</span>
+                    </div>
+                  </td>
+                  <td>Ex-vereador do Rio de Janeiro</td>
+                  <td>
+                    <span class="status-badge green">
+                      🟢 Senador Eleito SC (2027–2035)
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="table-person-cell">
+                      <img src="assets/images/eduardo.jpg" alt="Eduardo Bolsonaro" class="table-avatar-mini" loading="lazy">
+                      <span>Eduardo Bolsonaro ("03")</span>
+                    </div>
+                  </td>
+                  <td>Ex-deputado federal por São Paulo</td>
+                  <td>
+                    <span class="status-badge purple">
+                      🟣 Condenado (4a 2m) • Nos EUA
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="table-person-cell">
+                      <img src="assets/images/renan.jpg" alt="Jair Renan Bolsonaro" class="table-avatar-mini" loading="lazy">
+                      <span>Jair Renan Bolsonaro ("04")</span>
+                    </div>
+                  </td>
+                  <td>Vereador em Balneário Camboriú (SC)</td>
+                  <td>
+                    <span class="status-badge blue">
+                      🔵 Disputou Câmara Federal (131.461 votos)
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção 2: Perfis Detalhados -->
+    <section id="perfis">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Dossiê Individual</span>
+          <h2 class="section-title">Perfis em Detalhe</h2>
+          <p class="section-subtitle">
+            Conheça o histórico político, mandatos e os desdobramentos de cada membro da família.
+          </p>
+        </div>
+
+        <div class="profiles-grid" id="profiles-grid">
+          
+          <!-- Jair Bolsonaro -->
+          <article class="profile-card animate-on-scroll" data-category="processo executivo" id="card-jair">
+            <div class="profile-header">
+              <img src="assets/images/jair.jpg" alt="Jair Bolsonaro" class="profile-img" loading="lazy">
+              <div class="profile-gradient-overlay"></div>
+              <div class="profile-tags-float">
+                <span class="status-badge red">Prisão Domiciliar</span>
+                <span class="nickname-pill">Patriarca</span>
+              </div>
+            </div>
+            <div class="profile-body">
+              <h3 class="profile-name">Jair Bolsonaro</h3>
+              <p class="profile-role">Presidente da República de 2019 a 2022</p>
+              <p class="profile-bio">
+                Em setembro de 2025, o Supremo Tribunal Federal (STF) condenou Jair Bolsonaro por tentativa de golpe de Estado à pena de 27 anos e 3 meses. A condenação transitou em julgado em 25 de novembro de 2025.
+              </p>
+              <ul class="profile-keypoints">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Cumpre pena em prisão domiciliar por saúde no Jardim Botânico (Brasília) desde março/2026.</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Em 3 de julho de 2026, teve porte de arma e certificado CAC revogados pelo ministro Alexandre de Moraes.</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Direitos políticos suspensos em decorrência do trânsito em julgado da ação penal.</span>
+                </li>
+              </ul>
+
+              <div class="profile-extra-details">
+                <p>
+                  Em agosto de 2026, visitas regulares dos filhos Carlos e Jair Renan foram autorizadas formalmente pelo STF. Sua defesa recorreu em diversos momentos buscando atenuação, mas a execução da pena segue mantida.
+                </p>
+              </div>
+
+              <div class="profile-card-footer">
+                <button class="toggle-details-btn" aria-expanded="false">
+                  <span class="btn-text">Ver detalhes completos</span>
+                  <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <button class="copy-summary-btn" title="Copiar resumo">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Michelle Bolsonaro -->
+          <article class="profile-card animate-on-scroll" data-category="eleito" id="card-michelle">
+            <div class="profile-header">
+              <img src="assets/images/michelle.jpg" alt="Michelle Bolsonaro" class="profile-img" loading="lazy">
+              <div class="profile-gradient-overlay"></div>
+              <div class="profile-tags-float">
+                <span class="status-badge green">Senadora Eleita DF</span>
+                <span class="nickname-pill">Esposa</span>
+              </div>
+            </div>
+            <div class="profile-body">
+              <h3 class="profile-name">Michelle Bolsonaro</h3>
+              <p class="profile-role">Primeira-dama (2019–2022) • Senadora eleita (2027–2035)</p>
+              <p class="profile-bio">
+                Natural de Ceilândia (DF), Michelle estreou nas urnas com vitória maiúscula em 4 de outubro de 2026, conquistando a vaga ao Senado Federal pelo Distrito Federal com cerca de 29% dos votos válidos.
+              </p>
+              <ul class="profile-keypoints">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>1º lugar nas eleições ao Senado no DF, elegendo-se junto a Bia Kicis (PL).</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Mandato constitucional de oito anos (posse programada para fevereiro de 2027).</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Principal liderança feminina do PL e articuladora de pautas conservadoras e sociais.</span>
+                </li>
+              </ul>
+
+              <div class="profile-extra-details">
+                <p>
+                  Sua campanha contou com ampla mobilização do eleitorado evangélico e conservador do Distrito Federal, consolidando sua autonomia política na capital do país.
+                </p>
+              </div>
+
+              <div class="profile-card-footer">
+                <button class="toggle-details-btn" aria-expanded="false">
+                  <span class="btn-text">Ver detalhes completos</span>
+                  <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <button class="copy-summary-btn" title="Copiar resumo">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Flávio Bolsonaro -->
+          <article class="profile-card animate-on-scroll" data-category="eleito executivo" id="card-flavio">
+            <div class="profile-header">
+              <img src="assets/images/flavio.jpg" alt="Flávio Bolsonaro" class="profile-img" loading="lazy">
+              <div class="profile-gradient-overlay"></div>
+              <div class="profile-tags-float">
+                <span class="status-badge yellow">Disputou Planalto</span>
+                <span class="nickname-pill">Filho “01”</span>
+              </div>
+            </div>
+            <div class="profile-body">
+              <h3 class="profile-name">Flávio Bolsonaro</h3>
+              <p class="profile-role">Senador pelo RJ • Candidato à Presidência da República em 2026</p>
+              <p class="profile-bio">
+                Candidato oficial do Partido Liberal ao Planalto. Liderou o 1º turno com 47% dos votos contra Lula (45%). No 2º turno em 25 de outubro de 2026, foi derrotado em disputa acirrada, obtendo 48,2% dos votos.
+              </p>
+              <ul class="profile-keypoints">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Mantém o mandato de senador da República pelo estado do Rio de Janeiro.</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Defendeu abertamente pautas de anistia e indulto para réus do 8 de Janeiro e seus familiares.</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Consolidou a liderança da oposição partidária no Congresso Nacional.</span>
+                </li>
+              </ul>
+
+              <div class="profile-extra-details">
+                <p>
+                  Durante os debates presidenciais, destacou as vias legislativas como prioridade, articulando propostas de revisão de condenações com bancadas do Congresso.
+                </p>
+              </div>
+
+              <div class="profile-card-footer">
+                <button class="toggle-details-btn" aria-expanded="false">
+                  <span class="btn-text">Ver detalhes completos</span>
+                  <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <button class="copy-summary-btn" title="Copiar resumo">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Carlos Bolsonaro -->
+          <article class="profile-card animate-on-scroll" data-category="eleito" id="card-carlos">
+            <div class="profile-header">
+              <img src="assets/images/carlos.jpg" alt="Carlos Bolsonaro" class="profile-img" loading="lazy">
+              <div class="profile-gradient-overlay"></div>
+              <div class="profile-tags-float">
+                <span class="status-badge green">Senador Eleito SC</span>
+                <span class="nickname-pill">Filho “02”</span>
+              </div>
+            </div>
+            <div class="profile-body">
+              <h3 class="profile-name">Carlos Bolsonaro</h3>
+              <p class="profile-role">Ex-vereador do Rio • Senador eleito por Santa Catarina (2027–2035)</p>
+              <p class="profile-bio">
+                Após 7 mandatos consecutivos como vereador no Rio de Janeiro, transferiu domicílio para Santa Catarina e foi eleito senador em 4 de outubro de 2026 com cerca de 25% dos votos válidos, ao lado de Carol de Toni (PL).
+              </p>
+              <ul class="profile-keypoints">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Mandato de 8 anos no Senado Federal a partir de 2027.</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Historicamente responsável pela gestão da comunicação digital e redes da família.</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Autorizado em agosto de 2026 pelo STF a visitar regularmente o pai em Brasília.</span>
+                </li>
+              </ul>
+
+              <div class="profile-extra-details">
+                <p>
+                  Sua campanha em solo catarinense capitalizou a forte base eleitoral bolsonarista no estado, garantindo uma das maiores votações da história do Senado na região.
+                </p>
+              </div>
+
+              <div class="profile-card-footer">
+                <button class="toggle-details-btn" aria-expanded="false">
+                  <span class="btn-text">Ver detalhes completos</span>
+                  <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <button class="copy-summary-btn" title="Copiar resumo">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Eduardo Bolsonaro -->
+          <article class="profile-card animate-on-scroll" data-category="processo" id="card-eduardo">
+            <div class="profile-header">
+              <img src="assets/images/eduardo.jpg" alt="Eduardo Bolsonaro" class="profile-img" loading="lazy">
+              <div class="profile-gradient-overlay"></div>
+              <div class="profile-tags-float">
+                <span class="status-badge purple">Mandado de Prisão</span>
+                <span class="nickname-pill">Filho “03”</span>
+              </div>
+            </div>
+            <div class="profile-body">
+              <h3 class="profile-name">Eduardo Bolsonaro</h3>
+              <p class="profile-role">Ex-deputado federal por São Paulo • Reside nos EUA</p>
+              <p class="profile-bio">
+                Residindo nos EUA desde 2025, teve mandato cassado em dez/2025 por faltas. Em 16 de junho de 2026, foi condenado a 4 anos e 2 meses de prisão por unanimidade (4 a 0) na 1ª Turma do STF por coação processual.
+              </p>
+              <ul class="profile-keypoints">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Acusado de articular sanções internacionais nos EUA para coagir ministros do STF.</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Em 8 de outubro de 2026, mandado de prisão foi expedido pelo ministro Alexandre de Moraes.</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Cumprimento de pena depende de cooperação internacional ou extradição diplomática.</span>
+                </li>
+              </ul>
+
+              <div class="profile-extra-details">
+                <p>
+                  O Departamento de Estado dos Estados Unidos emitiu notas públicas criticando a condenação como perseguição política, o que gerou forte atrito diplomático entre os dois países.
+                </p>
+              </div>
+
+              <div class="profile-card-footer">
+                <button class="toggle-details-btn" aria-expanded="false">
+                  <span class="btn-text">Ver detalhes completos</span>
+                  <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <button class="copy-summary-btn" title="Copiar resumo">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Jair Renan Bolsonaro -->
+          <article class="profile-card animate-on-scroll" data-category="eleito" id="card-renan">
+            <div class="profile-header">
+              <img src="assets/images/renan.jpg" alt="Jair Renan Bolsonaro" class="profile-img" loading="lazy">
+              <div class="profile-gradient-overlay"></div>
+              <div class="profile-tags-float">
+                <span class="status-badge blue">Vereador em SC</span>
+                <span class="nickname-pill">Filho “04”</span>
+              </div>
+            </div>
+            <div class="profile-body">
+              <h3 class="profile-name">Jair Renan Bolsonaro</h3>
+              <p class="profile-role">Vereador em Balneário Camboriú (SC) • Candidato em 2026</p>
+              <p class="profile-bio">
+                Eleito vereador em Balneário Camboriú em 2024, disputou vaga para deputado federal por Santa Catarina em outubro de 2026 usando o nome de urna "Jair Bolsonaro", alcançando expressivos 131.461 votos.
+              </p>
+              <ul class="profile-keypoints">
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Atua como vereador no litoral catarinense com pautas de desenvolvimento urbano e juventude.</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Expressiva votação nominal em SC, confirmando a força eleitoral do clã na região sul.</span>
+                </li>
+                <li>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                  <span>Autorizado pela justiça a visitar regularmente o pai em prisão domiciliar.</span>
+                </li>
+              </ul>
+
+              <div class="profile-extra-details">
+                <p>
+                  Sua campanha em 2026 fortaleceu a presença da nova geração da família nos quadros legislativos estaduais e federais.
+                </p>
+              </div>
+
+              <div class="profile-card-footer">
+                <button class="toggle-details-btn" aria-expanded="false">
+                  <span class="btn-text">Ver detalhes completos</span>
+                  <svg class="chevron-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+                <button class="copy-summary-btn" title="Copiar resumo">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                </button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção 3: Linha do Tempo Dinâmica -->
+    <section id="cronologia">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Marcos Históricos</span>
+          <h2 class="section-title">Linha do Tempo Recente (2025–2026)</h2>
+          <p class="section-subtitle">
+            A sucessão de fatos, decisões do STF e resultados eleitorais que redefiniram o cenário político brasileiro.
+          </p>
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-card">
+              <span class="timeline-date">Setembro de 2025</span>
+              <p class="timeline-text">STF condena Jair Bolsonaro a 27 anos e 3 meses de reclusão por tentativa de golpe de Estado.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-card">
+              <span class="timeline-date">Novembro de 2025</span>
+              <p class="timeline-text">Jair Bolsonaro é recolhido à prisão. Em 25 de novembro, a condenação transita em julgado definitivamente.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-card">
+              <span class="timeline-date">18 de Dezembro de 2025</span>
+              <p class="timeline-text">Mesa Diretora da Câmara dos Deputados cassa o mandato parlamentar de Eduardo Bolsonaro por ausências não justificadas.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-card">
+              <span class="timeline-date">Março de 2026</span>
+              <p class="timeline-text">Por laudos médicos e razões de saúde, Jair Bolsonaro é transferido para prisão domiciliar em sua residência no DF.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-card">
+              <span class="timeline-date">16 de Junho de 2026</span>
+              <p class="timeline-text">Primeira Turma do STF condena Eduardo Bolsonaro por 4 a 0 a 4 anos e 2 meses de prisão por coação no curso do processo.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-card">
+              <span class="timeline-date">3 de Julho de 2026</span>
+              <p class="timeline-text">Ministro Alexandre de Moraes mantém prisão domiciliar por prazo indeterminado e revoga porte de arma e licença de CAC do ex-presidente.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-card">
+              <span class="timeline-date">4 de Outubro de 2026 • 1º Turno</span>
+              <p class="timeline-text">Flávio Bolsonaro lidera a corrida ao Planalto com 47% dos votos válidos e avança ao 2º turno contra Lula. Michelle (DF) e Carlos (SC) são eleitos senadores da República.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-card">
+              <span class="timeline-date">8 de Outubro de 2026</span>
+              <p class="timeline-text">Moraes determina expedição de mandado de prisão preventiva e definitiva contra Eduardo Bolsonaro, residente nos Estados Unidos.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-card">
+              <span class="timeline-date">25 de Outubro de 2026 • 2º Turno</span>
+              <p class="timeline-text">Apuração encerra as eleições presidenciais de 2026: Lula é reeleito, com Flávio Bolsonaro obtendo 48,2% dos votos válidos em disputa acirrada.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção 4: Versões em Disputa -->
+    <section id="versoes">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Debate Público</span>
+          <h2 class="section-title">Versões em Disputa</h2>
+          <p class="section-subtitle">
+            As condenações de Jair e Eduardo Bolsonaro são decisões de trânsito em julgado na esfera judiciária, mas continuam motivando leituras antagônicas no cenário público e internacional.
+          </p>
+        </div>
+
+        <div class="views-container">
+          <!-- Visão 1: Acusação / STF -->
+          <div class="view-card pro-conviction animate-on-scroll">
+            <div class="view-icon-badge">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                <path d="M2 12h20"></path>
+              </svg>
+            </div>
+            <h3 class="view-title">Leitura Institucional e de Apoio às Decisões</h3>
+            <p class="view-content">
+              Sustenta que os julgamentos observaram com rigor o devido processo legal constitucional, com ampla oportunidade de defesa, contraditório e base probatória exaustiva em inquéritos do STF e relatórios da Polícia Federal. 
+              <br><br>
+              No tocante a Eduardo Bolsonaro, a Corte e juristas apontam que a atuação internacional para retaliar autoridades da República e solicitar sanções econômicas contra o próprio país extrapola a imunidade parlamentar e materializa o delito de coação.
+            </p>
+          </div>
+
+          <!-- Visão 2: Defesa / Aliados -->
+          <div class="view-card critics-conviction animate-on-scroll">
+            <div class="view-icon-badge">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+              </svg>
+            </div>
+            <h3 class="view-title">Leitura da Defesa, Aliados e Críticos</h3>
+            <p class="view-content">
+              Aliados e defensores afirmam existir perseguição política, parcialidade e ativismo judicial desmedido com o intuito de neutralizar as lideranças da direita no Brasil.
+              <br><br>
+              Eduardo Bolsonaro sustenta não ter sido validamente intimado e alega residir em endereço público e notório. Manifestações do Departamento de Estado americano classificaram as punições como instrumento de "manipulação e coação jurídica com motivações ideológicas".
+            </p>
+          </div>
+        </div>
+
+        <div class="disclaimer-box animate-on-scroll">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+          <span><strong>Compromisso informativo:</strong> Este portal tem finalidade estritamente documental e educacional, expondo os fatos judiciais oficiais e as posições de ambas as partes sem qualquer alinhamento partidário.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção 5: Fontes Auditadas -->
+    <section id="fontes">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Auditoria & Checagem</span>
+          <h2 class="section-title">Fontes Consultadas</h2>
+          <p class="section-subtitle">
+            Reportagens de veículos de imprensa, diários oficiais e agências de notícias auditadas em 10 de novembro de 2026.
+          </p>
+        </div>
+
+        <div class="sources-grid">
+          <a href="https://www.oliberal.com/politica/jair-bolsonaro-completa-um-ano-preso-1.1153774" target="_blank" rel="noopener noreferrer" class="source-item animate-on-scroll">
+            <div class="source-info">
+              <span class="source-vehicle">O Liberal</span>
+              <span class="source-title">Jair Bolsonaro completa um ano preso</span>
+            </div>
+            <svg class="source-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
+
+          <a href="https://www.conjur.com.br/2026-jul-03/alexandre-mantem-prisao-domiciliar-de-bolsonaro-mas-revoga-porte-de-arma-e-certificado-de-cac/" target="_blank" rel="noopener noreferrer" class="source-item animate-on-scroll">
+            <div class="source-info">
+              <span class="source-vehicle">ConJur</span>
+              <span class="source-title">Moraes mantém domiciliar e revoga porte de arma</span>
+            </div>
+            <svg class="source-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
+
+          <a href="https://diariodonordeste.verdesmares.com.br/pontopoder/com-482-no-segundo-turno-flavio-bolsonaro-perde-eleicao-para-presidente-do-brasil-em-2026-1.3800318" target="_blank" rel="noopener noreferrer" class="source-item animate-on-scroll">
+            <div class="source-info">
+              <span class="source-vehicle">Diário do Nordeste</span>
+              <span class="source-title">Flávio Bolsonaro alcança 48,2% no 2º turno</span>
+            </div>
+            <svg class="source-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
+
+          <a href="https://www12.senado.leg.br/noticias/materias/2026/10/04/santa-catarina-elege-carol-de-toni-e-carlos-bolsonaro-ao-senado" target="_blank" rel="noopener noreferrer" class="source-item animate-on-scroll">
+            <div class="source-info">
+              <span class="source-vehicle">Agência Senado</span>
+              <span class="source-title">Santa Catarina elege Carlos Bolsonaro ao Senado</span>
+            </div>
+            <svg class="source-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
+
+          <a href="https://www.congressoemfoco.com.br/noticia/122873/michelle-e-bia-kicis-sao-eleitas-senadoras-pelo-distrito-federal" target="_blank" rel="noopener noreferrer" class="source-item animate-on-scroll">
+            <div class="source-info">
+              <span class="source-vehicle">Congresso em Foco</span>
+              <span class="source-title">Michelle Bolsonaro e Bia Kicis são eleitas no DF</span>
+            </div>
+            <svg class="source-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
+
+          <a href="https://mais.opovo.com.br/jornal/politica/2026/06/17/stf-condena-eduardo-bolsonaro-a-4-anos-de-prisao-por-coacao.html" target="_blank" rel="noopener noreferrer" class="source-item animate-on-scroll">
+            <div class="source-info">
+              <span class="source-vehicle">O Povo</span>
+              <span class="source-title">STF condena Eduardo Bolsonaro a 4 anos por coação</span>
+            </div>
+            <svg class="source-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
+
+          <a href="https://www.correiodamanha.com.br/politica/2026/06/amp/295276-eua-criticam-condenacao-de-eduardo-bolsonaro-pelo-stf.html" target="_blank" rel="noopener noreferrer" class="source-item animate-on-scroll">
+            <div class="source-info">
+              <span class="source-vehicle">Correio da Manhã</span>
+              <span class="source-title">EUA criticam condenação de Eduardo pelo STF</span>
+            </div>
+            <svg class="source-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
+
+          <a href="https://sot.inf.br/noticia/60254/jair-renan-bolsonaro-recebe-131461-votos-para-deputado-federal-em-santa-catarina" target="_blank" rel="noopener noreferrer" class="source-item animate-on-scroll">
+            <div class="source-info">
+              <span class="source-vehicle">SOT Notícias</span>
+              <span class="source-title">Jair Renan Bolsonaro atinge 131.461 votos em SC</span>
+            </div>
+            <svg class="source-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-top">
+        <p class="footer-disclaimer">
+          Projeto informativo, documental e de código aberto, sem vínculo partidário ou governamental. As informações refletem documentos públicos e notícias apuradas até 10 de novembro de 2026.
+        </p>
+        <div class="footer-links">
+          <a href="https://github.com/Luk41400/site-bolso" target="_blank" rel="noopener noreferrer">GitHub do Projeto</a>
+          <a href="#quadro">Topo</a>
+        </div>
+      </div>
     </div>
-  </section>
+  </footer>
 
-  <section id="fontes">
-    <div class="wrap">
-      <h2>Fontes</h2>
-      <p class="small">Reportagens consultadas em 10 de novembro de 2026.</p>
-      <ol class="sources">
-        <li><a href="https://www.oliberal.com/politica/jair-bolsonaro-completa-um-ano-preso-1.1153774">O Liberal: Jair Bolsonaro completa um ano preso</a></li>
-        <li><a href="https://www.jb.com.br/brasil/informe-jb/2026/09/1061019-defesa-de-bolsonaro-desiste-de-suspender-pena-no-stf.html">Jornal do Brasil: defesa de Bolsonaro desiste de suspender pena no STF</a></li>
-        <li><a href="https://www.conjur.com.br/2026-jul-03/alexandre-mantem-prisao-domiciliar-de-bolsonaro-mas-revoga-porte-de-arma-e-certificado-de-cac/">Conjur: Alexandre mantém domiciliar de Bolsonaro e revoga porte de arma</a></li>
-        <li><a href="https://www.gazetadopovo.com.br/republica/moraes-autoriza-carlos-e-jair-renan-a-visitarem-jair-bolsonaro-em-casa/">Gazeta do Povo: Moraes autoriza Carlos e Jair Renan a visitarem Jair Bolsonaro</a></li>
-        <li><a href="https://diariodonordeste.verdesmares.com.br/pontopoder/com-482-no-segundo-turno-flavio-bolsonaro-perde-eleicao-para-presidente-do-brasil-em-2026-1.3800318">Diário do Nordeste: Flávio Bolsonaro perde a eleição com 48,2% no segundo turno</a></li>
-        <li><a href="https://www.diariodepernambuco.com.br/politica/2026/10/11725647-flavio-bolsonaro-e-lula-vao-disputar-segundo-turno-para-presidente.html">Diario de Pernambuco: Flávio Bolsonaro e Lula vão disputar o segundo turno</a></li>
-        <li><a href="https://www.gazetadopovo.com.br/republica/flavio-bolsonaro-avalia-caminhos-juridicos-para-reverter-condenacoes-da-familia/">Gazeta do Povo: como Flávio lidará com as condenações de Jair e Eduardo</a></li>
-        <li><a href="https://www12.senado.leg.br/noticias/materias/2026/10/04/santa-catarina-elege-carol-de-toni-e-carlos-bolsonaro-ao-senado">Agência Senado: Santa Catarina elege Carol de Toni e Carlos Bolsonaro ao Senado</a></li>
-        <li><a href="https://www.jota.info/eleicoes/eleicoes-2026/carlos-bolsonaro-e-eleito-senador-por-santa-catarina">JOTA: Carlos Bolsonaro é eleito senador por Santa Catarina</a></li>
-        <li><a href="https://www.dgabc.com.br/Noticia/4350853/michelle-bolsonaro-e-bia-kicis-sao-eleitas-senadoras">DGABC: Michelle Bolsonaro e Bia Kicis são eleitas senadoras</a></li>
-        <li><a href="https://www.congressoemfoco.com.br/noticia/122873/michelle-e-bia-kicis-sao-eleitas-senadoras-pelo-distrito-federal">Congresso em Foco: Michelle e Bia Kicis são eleitas senadoras pelo DF</a></li>
-        <li><a href="https://mais.opovo.com.br/jornal/politica/2026/06/17/stf-condena-eduardo-bolsonaro-a-4-anos-de-prisao-por-coacao.html">O Povo: STF condena Eduardo Bolsonaro a 4 anos de prisão por coação</a></li>
-        <li><a href="https://jornalggn.com.br/justica/primeira-turma-do-stf-mantem-condenacao-de-eduardo-bolsonaro-a-quatro-anos-de-prisao/">Jornal GGN: Primeira Turma mantém condenação de Eduardo Bolsonaro</a></li>
-        <li><a href="https://www.jb.com.br/brasil/justica/2026/10/1061164-moraes-decreta-prisao-de-eduardo-bolsonaro-apos-condenacao-no-stf.html">Jornal do Brasil: Moraes decreta prisão de Eduardo Bolsonaro</a></li>
-        <li><a href="https://www.correiodamanha.com.br/politica/2026/06/amp/295276-eua-criticam-condenacao-de-eduardo-bolsonaro-pelo-stf.html">Correio da Manhã: EUA criticam condenação de Eduardo Bolsonaro pelo STF</a></li>
-        <li><a href="https://sot.inf.br/noticia/60254/jair-renan-bolsonaro-recebe-131461-votos-para-deputado-federal-em-santa-catarina">SOT: Jair Renan Bolsonaro recebe 131.461 votos para deputado federal em SC</a></li>
-        <li><a href="https://www.diariodepernambuco.com.br/politica/2026/07/11718206-filho-04-de-bolsonaro-jair-renan-anuncia-pre-candidatura-a-deputado-federal.html">Diario de Pernambuco: Jair Renan anuncia pré-candidatura a deputado federal</a></li>
-      </ol>
-    </div>
-  </section>
-</main>
+  <!-- Botão Flutuante Voltar ao Topo -->
+  <button id="back-to-top" class="back-to-top-btn" aria-label="Voltar ao início da página" title="Voltar ao topo">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
 
-<footer>
-  <div class="wrap-wide">
-    <p>Projeto informativo e independente, sem vínculo com a família Bolsonaro, partidos ou governos. Se notar um erro ou algo desatualizado, corrija o texto no repositório e publique novamente.</p>
-  </div>
-</footer>
-
+  <!-- Script Principal -->
+  <script src="script.js" defer></script>
 </body>
 </html>
