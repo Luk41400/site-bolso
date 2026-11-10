@@ -301,21 +301,30 @@ function initCardInteractions() {
 
   // Accordion de detalhes
   document.querySelectorAll('.toggle-details-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const detailsSection = btn.parentElement.querySelector('.profile-extra-details');
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const card = btn.closest('.profile-card');
+      if (!card) return;
+      const detailsSection = card.querySelector('.profile-extra-details');
       const isExpanded = btn.getAttribute('aria-expanded') === 'true';
 
       if (detailsSection) {
         if (isExpanded) {
+          detailsSection.classList.remove('expanded');
           detailsSection.style.maxHeight = '0px';
           btn.setAttribute('aria-expanded', 'false');
-          btn.querySelector('.btn-text').textContent = 'Ver detalhes completos';
-          btn.querySelector('.chevron-icon').style.transform = 'rotate(0deg)';
+          const textSpan = btn.querySelector('.btn-text');
+          if (textSpan) textSpan.textContent = 'Ver detalhes completos';
+          const chevron = btn.querySelector('.chevron-icon');
+          if (chevron) chevron.style.transform = 'rotate(0deg)';
         } else {
-          detailsSection.style.maxHeight = detailsSection.scrollHeight + 'px';
+          detailsSection.classList.add('expanded');
+          detailsSection.style.maxHeight = (detailsSection.scrollHeight + 60) + 'px';
           btn.setAttribute('aria-expanded', 'true');
-          btn.querySelector('.btn-text').textContent = 'Ocultar detalhes';
-          btn.querySelector('.chevron-icon').style.transform = 'rotate(180deg)';
+          const textSpan = btn.querySelector('.btn-text');
+          if (textSpan) textSpan.textContent = 'Ocultar detalhes';
+          const chevron = btn.querySelector('.chevron-icon');
+          if (chevron) chevron.style.transform = 'rotate(180deg)';
         }
       }
     });
